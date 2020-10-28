@@ -51,7 +51,7 @@
 
 using namespace std;
 
-#include "husky_base/horizon_legacy/Logger.h"
+#include "rover_base/horizon_legacy/Logger.h"
 
 namespace clearpath
 {

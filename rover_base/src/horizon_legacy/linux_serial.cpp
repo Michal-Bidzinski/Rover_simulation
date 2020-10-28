@@ -47,7 +47,7 @@
 #if !defined(LINUX_SERIAL_H) && !defined(win_x86)
 #define LINUX_SERIAL_H
 
-#include "husky_base/horizon_legacy/serial.h"  /* Std. function protos */
+#include "rover_base/horizon_legacy/serial.h"  /* Std. function protos */
 #include <stdio.h>   /* Standard input/output definitions */
 #include <string.h>  /* String function definitions */
 #include <unistd.h>  /* UNIX standard function definitions */

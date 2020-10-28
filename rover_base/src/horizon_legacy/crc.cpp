@@ -45,7 +45,7 @@
 *
 */
 
-#include <husky_base/horizon_legacy/crc.h>
+#include <rover_base/horizon_legacy/crc.h>
 
 //CRC lookup table for polynomial 0x1021
 const uint16_t table[256] =

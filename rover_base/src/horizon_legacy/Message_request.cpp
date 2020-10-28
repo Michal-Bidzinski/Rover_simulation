@@ -43,8 +43,8 @@
 *
 */
 
-#include "husky_base/horizon_legacy/Message_request.h"
-#include "husky_base/horizon_legacy/Number.h"
+#include "rover_base/horizon_legacy/Message_request.h"
+#include "rover_base/horizon_legacy/Number.h"
 
 namespace clearpath
 {

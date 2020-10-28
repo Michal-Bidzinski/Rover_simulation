@@ -51,8 +51,8 @@
 #include <list>
 #include <iostream>
 
-#include "husky_base/horizon_legacy/Message.h"
-#include "husky_base/horizon_legacy/Exception.h"
+#include "rover_base/horizon_legacy/Message.h"
+#include "rover_base/horizon_legacy/Exception.h"
 
 namespace clearpath
 {

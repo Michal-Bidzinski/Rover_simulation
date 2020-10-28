@@ -43,7 +43,7 @@
 *
 */
 
-#include "husky_base/horizon_legacy/Message_cmd.h"
+#include "rover_base/horizon_legacy/Message_cmd.h"
 
 #include <cstring>
 #include <iostream>
@@ -51,10 +51,10 @@
 
 using namespace std;
 
-#include "husky_base/horizon_legacy/Number.h"
+#include "rover_base/horizon_legacy/Number.h"
 // Conditions on the below to handle compiling for nonstandard hardware
 #ifdef LOGGING_AVAIL
-#include "husky_base/horizon_legacy/Logger.h"
+#include "rover_base/horizon_legacy/Logger.h"
 #endif
 
 namespace clearpath

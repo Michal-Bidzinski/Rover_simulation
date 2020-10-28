@@ -51,7 +51,7 @@
 #include <cstdlib>
 #include <stdint.h>
 
-#include "husky_base/horizon_legacy/Exception.h"
+#include "rover_base/horizon_legacy/Exception.h"
 
 
 namespace clearpath

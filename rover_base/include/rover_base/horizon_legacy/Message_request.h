@@ -8,11 +8,12 @@
 *   \ \_/ \_/ /  | |  | |  | ++ | |_| || ++ / | ++_/| |_| |  | |  | +-+ |
 *    \  \_/  /   | |_ | |_ | ++ |  _  || |\ \ | |   |  _  |  | |  | +-+ |
 *     \_____/    \___/|___||___||_| |_||_| \_\|_|   |_| |_|  |_|  |_| |_|
-*             ROBOTICS�
+*             ROBOTICS™
 *
-*  File: clearpath.h
-*  Desc: Includes all CCP headers
-*  Auth: R. Gariepy, Iain Peet
+*  File: Message_request.h
+*  Desc: Provides the Request class, which is used to request data messages
+*        at a particular frequency.
+*  Auth: Iain Peet
 *
 *  Copyright (c) 2010, Clearpath Robotics, Inc.
 *  All Rights Reserved
@@ -43,13 +44,23 @@
 *
 */
 
-#ifndef CLEARPATH_H
-#define CLEARPATH_H
+#ifndef CLEARPATH_MESSAGE_REQUEST_H
+#define CLEARPATH_MESSAGE_REQUEST_H
 
-#include "husky_base/horizon_legacy/Message.h"
-#include "husky_base/horizon_legacy/Message_cmd.h"
-#include "husky_base/horizon_legacy/Message_request.h"
-#include "husky_base/horizon_legacy/Message_data.h"
-#include "husky_base/horizon_legacy/Transport.h"
+#include "rover_base/horizon_legacy/Message.h"
 
-#endif  // CLEARPATH_H
+namespace clearpath
+{
+
+  class Request : public Message
+  {
+  public:
+    Request(uint16_t type, uint16_t freq = 0);
+
+    Request(const Request &other);
+  };
+
+}; // namespace clearpath
+
+#endif  // CLEARPATH_MESSAGE_REQUEST_H
+

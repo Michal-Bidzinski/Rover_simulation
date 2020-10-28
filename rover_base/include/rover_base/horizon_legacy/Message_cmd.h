@@ -46,7 +46,7 @@
 #ifndef CLEARPATH_MESSAGE_CMD_H
 #define CLEARPATH_MESSAGE_CMD_H
 
-#include "husky_base/horizon_legacy/Message.h"
+#include "rover_base/horizon_legacy/Message.h"
 
 namespace clearpath
 {

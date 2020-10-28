@@ -45,7 +45,7 @@
 *
 */
 
-#include "husky_base/horizon_legacy/Number.h"
+#include "rover_base/horizon_legacy/Number.h"
 #include <cstdlib>
 
 using namespace std;

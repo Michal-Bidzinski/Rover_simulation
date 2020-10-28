@@ -32,14 +32,14 @@
 #ifndef HUSKY_BASE_HUSKY_HARDWARE_H
 #define HUSKY_BASE_HUSKY_HARDWARE_H
 
-#include "husky_base/husky_diagnostics.h"
+#include "rover_base/husky_diagnostics.h"
 #include "diagnostic_updater/diagnostic_updater.h"
 #include "hardware_interface/joint_state_interface.h"
 #include "hardware_interface/joint_command_interface.h"
 #include "hardware_interface/robot_hw.h"
 #include "ros/ros.h"
 #include "sensor_msgs/JointState.h"
-#include "husky_msgs/HuskyStatus.h"
+#include "rover_msgs/HuskyStatus.h"
 #include <string>
 
 namespace husky_base
@@ -84,7 +84,7 @@ namespace husky_base
 
     // Diagnostics
     ros::Publisher diagnostic_publisher_;
-    husky_msgs::HuskyStatus husky_status_msg_;
+    rover_msgs::HuskyStatus husky_status_msg_;
     diagnostic_updater::Updater diagnostic_updater_;
     HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus> system_status_task_;
     HuskyHardwareDiagnosticTask<clearpath::DataPowerSystem> power_status_task_;

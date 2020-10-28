@@ -34,8 +34,8 @@
 
 #include "ros/ros.h"
 #include "diagnostic_updater/diagnostic_updater.h"
-#include "husky_base/horizon_legacy_wrapper.h"
-#include "husky_msgs/HuskyStatus.h"
+#include "rover_base/horizon_legacy_wrapper.h"
+#include "rover_msgs/HuskyStatus.h"
 
 namespace husky_base
 {
@@ -44,7 +44,7 @@ namespace husky_base
     public diagnostic_updater::DiagnosticTask
   {
   public:
-    explicit HuskySoftwareDiagnosticTask(husky_msgs::HuskyStatus &msg, double target_control_freq);
+    explicit HuskySoftwareDiagnosticTask(rover_msgs::HuskyStatus &msg, double target_control_freq);
 
     void run(diagnostic_updater::DiagnosticStatusWrapper &stat);
 
@@ -54,7 +54,7 @@ namespace husky_base
     void reset();
 
     double control_freq_, target_control_freq_;
-    husky_msgs::HuskyStatus &msg_;
+    rover_msgs::HuskyStatus &msg_;
   };
 
   template<typename T>
@@ -62,7 +62,7 @@ namespace husky_base
     public diagnostic_updater::DiagnosticTask
   {
   public:
-    explicit HuskyHardwareDiagnosticTask(husky_msgs::HuskyStatus &msg);
+    explicit HuskyHardwareDiagnosticTask(rover_msgs::HuskyStatus &msg);
 
     void run(diagnostic_updater::DiagnosticStatusWrapper &stat)
     {
@@ -76,18 +76,18 @@ namespace husky_base
     void update(diagnostic_updater::DiagnosticStatusWrapper &stat, typename horizon_legacy::Channel<T>::Ptr &status);
 
   private:
-    husky_msgs::HuskyStatus &msg_;
+    rover_msgs::HuskyStatus &msg_;
   };
 
   template<>
-  HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus>::HuskyHardwareDiagnosticTask(husky_msgs::HuskyStatus &msg);
+  HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus>::HuskyHardwareDiagnosticTask(rover_msgs::HuskyStatus &msg);
 
   template<>
-  HuskyHardwareDiagnosticTask<clearpath::DataPowerSystem>::HuskyHardwareDiagnosticTask(husky_msgs::HuskyStatus &msg);
+  HuskyHardwareDiagnosticTask<clearpath::DataPowerSystem>::HuskyHardwareDiagnosticTask(rover_msgs::HuskyStatus &msg);
 
   template<>
   HuskyHardwareDiagnosticTask<clearpath::DataSafetySystemStatus>::HuskyHardwareDiagnosticTask(
-    husky_msgs::HuskyStatus &msg);
+    rover_msgs::HuskyStatus &msg);
 
   template<>
   void HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus>::update(

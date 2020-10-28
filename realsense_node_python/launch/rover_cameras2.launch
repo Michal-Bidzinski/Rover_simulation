@@ -1,0 +1,17 @@
+<!-- 
+  Example launch file for octomap_server mapping:  
+-->
+<launch>
+
+
+        <include file="$(find realsense_node_python)/launch/rover_odometry.launch"/>
+        <include file="$(find realsense_node_python)/launch/rover_align_depth_image.launch"/>
+        <include file="$(find realsense_node_python)/launch/depth_image_to_laser_scan.launch"/>
+
+	<node pkg="realsense_node_python" type="rover_cameras_sync.py"  name="rover_cameras_sync" output="screen"/>
+
+	<node pkg="realsense_node_python" type="frame.py"  name="tf_camera" output="screen"/>
+
+
+        <!--node type="rviz" name="rviz" pkg="rviz" args="-d $(find realsense_node_python)/rviz/config.rviz"/-->
+</launch>

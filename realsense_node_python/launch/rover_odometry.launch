@@ -1,0 +1,6 @@
+<!-- 
+  Example launch file for octomap_server mapping:  
+-->
+<launch>
+	<node pkg="realsense_node_python" type="rover_odometry.py" name="rover_trajectory" output="screen"/>
+</launch>

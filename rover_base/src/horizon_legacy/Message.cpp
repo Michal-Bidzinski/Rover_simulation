@@ -47,15 +47,15 @@
 #include <unistd.h>
 #include <iostream>
 #include <string.h>
-#include "husky_base/horizon_legacy/crc.h"
-#include "husky_base/horizon_legacy/Message.h"
-#include "husky_base/horizon_legacy/Message_data.h"
-#include "husky_base/horizon_legacy/Number.h"
-#include "husky_base/horizon_legacy/Transport.h"
+#include "rover_base/horizon_legacy/crc.h"
+#include "rover_base/horizon_legacy/Message.h"
+#include "rover_base/horizon_legacy/Message_data.h"
+#include "rover_base/horizon_legacy/Number.h"
+#include "rover_base/horizon_legacy/Transport.h"
 
 // Conditions on the below to handle compiling for nonstandard hardware
 #ifdef LOGGING_AVAIL
-#include "husky_base/horizon_legacy/Logger.h"
+#include "rover_base/horizon_legacy/Logger.h"
 #endif
 
 using namespace std;

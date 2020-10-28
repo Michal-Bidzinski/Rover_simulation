@@ -29,7 +29,7 @@
 *
 */
 
-#include "husky_base/husky_hardware.h"
+#include "rover_base/husky_hardware.h"
 #include "controller_manager/controller_manager.h"
 #include "ros/callback_queue.h"
 

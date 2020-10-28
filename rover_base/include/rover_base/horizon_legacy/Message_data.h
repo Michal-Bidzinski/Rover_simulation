@@ -50,8 +50,8 @@
 #include <iostream>
 #include <string>
 #include <stdint.h>
-#include "husky_base/horizon_legacy/Message.h"
-#include "husky_base/horizon_legacy/Message_request.h"
+#include "rover_base/horizon_legacy/Message.h"
+#include "rover_base/horizon_legacy/Message_request.h"
 
 namespace clearpath
 {

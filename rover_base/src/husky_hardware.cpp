@@ -29,7 +29,7 @@
 *
 */           
                                                                                                                                  
-#include "husky_base/husky_hardware.h"
+#include "rover_base/husky_hardware.h"
 #include <boost/assign/list_of.hpp>              
           
 namespace                                   
@@ -102,7 +102,7 @@ namespace husky_base
     diagnostic_updater_.add(power_status_task_);
     diagnostic_updater_.add(safety_status_task_);
     diagnostic_updater_.add(software_status_task_);
-    diagnostic_publisher_ = nh_.advertise<husky_msgs::HuskyStatus>("status", 10);
+    diagnostic_publisher_ = nh_.advertise<rover_msgs::HuskyStatus>("status", 10);
   }
 
 

@@ -32,7 +32,7 @@
 #ifndef HUSKY_BASE_HORIZON_LEGACY_WRAPPER_H
 #define HUSKY_BASE_HORIZON_LEGACY_WRAPPER_H
 
-#include "husky_base/horizon_legacy/clearpath.h"
+#include "rover_base/horizon_legacy/clearpath.h"
 #include "boost/type_traits/is_base_of.hpp"
 
 namespace

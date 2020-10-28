@@ -29,7 +29,7 @@
 *
 */
 
-#include "husky_base/husky_diagnostics.h"
+#include "rover_base/husky_diagnostics.h"
 
 namespace
 {
@@ -58,7 +58,7 @@ namespace husky_base
 {
 
   template<>
-  HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus>::HuskyHardwareDiagnosticTask(husky_msgs::HuskyStatus &msg)
+  HuskyHardwareDiagnosticTask<clearpath::DataSystemStatus>::HuskyHardwareDiagnosticTask(rover_msgs::HuskyStatus &msg)
     :
     DiagnosticTask("system_status"),
     msg_(msg)
@@ -144,7 +144,7 @@ namespace husky_base
   }
 
   template<>
-  HuskyHardwareDiagnosticTask<clearpath::DataPowerSystem>::HuskyHardwareDiagnosticTask(husky_msgs::HuskyStatus &msg)
+  HuskyHardwareDiagnosticTask<clearpath::DataPowerSystem>::HuskyHardwareDiagnosticTask(rover_msgs::HuskyStatus &msg)
     :
     DiagnosticTask("power_status"),
     msg_(msg)
@@ -178,7 +178,7 @@ namespace husky_base
 
   template<>
   HuskyHardwareDiagnosticTask<clearpath::DataSafetySystemStatus>::HuskyHardwareDiagnosticTask(
-    husky_msgs::HuskyStatus &msg)
+    rover_msgs::HuskyStatus &msg)
     :
     DiagnosticTask("safety_status"),
     msg_(msg)
@@ -215,7 +215,7 @@ namespace husky_base
     }
   }
 
-  HuskySoftwareDiagnosticTask::HuskySoftwareDiagnosticTask(husky_msgs::HuskyStatus &msg, double target_control_freq)
+  HuskySoftwareDiagnosticTask::HuskySoftwareDiagnosticTask(rover_msgs::HuskyStatus &msg, double target_control_freq)
     :
     DiagnosticTask("software_status"),
     msg_(msg),
