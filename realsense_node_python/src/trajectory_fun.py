@@ -34,16 +34,12 @@ def get_path_position_orientation(pose, my_path, timestamp, sync):
         pose.pose.orientation.y = roll
         pose.pose.orientation.w = 1 
 
-        pose.header.frame_id = 'camera'        
+        pose.header.frame_id = 'odom'        
 
         if sync:
-            #print("trajectory timestamp: ",timestamp)
-            t1 = (timestamp / 100000000)
-            t2 = (t1 - int(t1)) * 100000
-
-            #t1 = timestamp / 1000.0
-            time = rospy.Time(secs=int(t2), nsecs = int((t2 - int(t2))*100))
-            #print("trajectory time: ",time)
+            t1 = (timestamp / 1000)
+            t2 = (timestamp - int(t1) * 1000) * 10000
+            time = rospy.Time(secs=int(t1), nsecs = int(t2))
 
         my_path.poses.append(pose)
         position = [pose.pose.position.x, pose.pose.position.y, pose.pose.position.z]

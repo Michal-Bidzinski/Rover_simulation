@@ -50,6 +50,9 @@ bridge = CvBridge()
 
 print("Start node")
 
+old_timestamp = 0
+old_ros_time = 0
+
 
 while not rospy.is_shutdown():
     
@@ -57,6 +60,12 @@ while not rospy.is_shutdown():
     frames = pipeline.wait_for_frames()
     color_frame = frames.get_color_frame()
     timestamp_d = frames.get_timestamp()
+    print("timestamp: ", timestamp_d)
+    print("difference in timestamp: ", timestamp_d - old_timestamp)
+    now_time = rospy.Time.now().to_sec()
+    print("difference in ros time : ", now_time - old_ros_time)
+    old_timestamp = timestamp_d
+    old_ros_time = now_time
 
     # Publish color image
     color_image = np.asanyarray(color_frame.get_data())
@@ -73,9 +82,9 @@ while not rospy.is_shutdown():
     align_message = bridge.cv2_to_imgmsg(align_depth, encoding="passthrough")
 
     # timestamp set
-    t1 = (timestamp_d / 100000000)
-    t2 = (t1 - int(t1)) * 100000
-    time = rospy.Time(secs=int(t2), nsecs = int((t2 - int(t2))*100))
+    t1 = (timestamp_d / 1000)
+    t2 = (timestamp_d - int(t1) * 1000) * 10000
+    time = rospy.Time(secs=int(t1), nsecs = int(t2))
     align_message.header.stamp = time
 
     pub_align.publish(align_message)

@@ -9,9 +9,9 @@ from nav_msgs.msg import Odometry
 def callback(msg):
 
     br1 = tf.TransformBroadcaster()
-    br1.sendTransform((- msg.pose.pose.position.y, 
-                       - msg.pose.pose.position.x,
-                       msg.pose.pose.position.z),
+    br1.sendTransform((msg.pose.pose.position.x, 
+                       - msg.pose.pose.position.y,
+                       - msg.pose.pose.position.z),
                      (0, 
                       0, 
                       0, 
@@ -24,8 +24,8 @@ def callback(msg):
     br2.sendTransform((0, 
                        0,
                        0),
-                      (- msg.pose.pose.orientation.x, 
-                       - msg.pose.pose.orientation.y, 
+                      ( msg.pose.pose.orientation.y, 
+                       - msg.pose.pose.orientation.x, 
                        - msg.pose.pose.orientation.z, 
                        msg.pose.pose.orientation.w),
                       rospy.Time.now(),

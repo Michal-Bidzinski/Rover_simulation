@@ -19,29 +19,29 @@ from sensor_msgs.msg import PointCloud2, Image, PointField
 from std_msgs.msg import Header
 
 
-def cameras_callback(odom_msg, image_msg):
-    timestamp_pc = image_msg.header.stamp
+def cameras_callback(odom_msg, pc_msg):
+    timestamp_pc = pc_msg.header.stamp
     timestamp_tr = odom_msg.header.stamp
     print("IM: ", timestamp_pc, " TR: ", timestamp_tr, " difference: ", timestamp_tr - timestamp_pc)
 
-    image_msg.header.stamp = rospy.Time()   
+    pc_msg.header.stamp = rospy.Time()   
     odom_msg.header.stamp = rospy.Time()  
  
     pub_odom.publish(odom_msg)
-    pub_align_depth.publish(image_msg)
+    pub_point_cloud.publish(pc_msg)
 
 # Node init 
 rospy.init_node('rover_cameras_sync', anonymous = True)
 
 # Subscriber definition
 odometry = message_filters.Subscriber('odom_t265', Odometry)
-point_cloud = message_filters.Subscriber('align_depth', Image)
-ts = message_filters.ApproximateTimeSynchronizer([odometry, point_cloud], 2, 0.05, allow_headerless=True)
+point_cloud = message_filters.Subscriber('point_cloud2', PointCloud2)
+ts = message_filters.ApproximateTimeSynchronizer([odometry, point_cloud], 2, 0.00000005, allow_headerless=True)
 ts.registerCallback(cameras_callback)
 
 # Publisher definition
 pub_odom = rospy.Publisher('odom_t265_sync', Odometry, queue_size=20)
-pub_align_depth = rospy.Publisher("align_depth_sync", Image, queue_size=2)
+pub_point_cloud = rospy.Publisher("poinr_cloud2_sync", PointCloud2, queue_size=2)
 rate = rospy.Rate(30) # 30hz
 
 #print("Start node")

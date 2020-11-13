@@ -2,8 +2,8 @@
 <!--
 Software License Agreement (BSD)
 
-\file      amcl_demo.launch
-\authors   Paul Bovbel <pbovbel@clearpathrobotics.com>, Prasenjit Mukherjee <pmukherj@clearpathrobotics.com>
+\file      husky_playpen.launch
+\authors   Paul Bovbel <pbovbel@clearpathrobotics.com
 \copyright Copyright (c) 2015, Clearpath Robotics, Inc., All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that
@@ -25,17 +25,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 -->
 <launch>
 
-  <!-- Run the map server -->
-  <!--arg name="map_file" default="$(find husky_navigation)/maps/playpen_map.yaml"/>
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" /-->
-  <arg name="scan_topic" default="$(eval optenv('HUSKY_LASER_TOPIC', 'scan3'))" />
+  <arg name="laser_enabled" default="true"/>
+  <arg name="realsense_enabled" default="false"/>
 
-  <!--- Run AMCL -->
-  <include file="$(find rover_navigation)/launch/amcl.launch">
-    <arg name="scan_topic" value="$(arg scan_topic)" />
+  <include file="$(find rover_gazebo)/launch/playpen.launch" />
+
+  <include file="$(find rover_gazebo)/launch/spawn_husky_real.launch">
+    <arg name="laser_enabled" value="$(arg laser_enabled)"/>
+    <arg name="realsense_enabled" value="$(arg realsense_enabled)"/>
   </include>
-
-  <!--- Run Move Base -->
-  <include file="$(find rover_navigation)/launch/move_base.launch" />
 
 </launch>

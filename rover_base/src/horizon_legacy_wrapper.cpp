@@ -28,7 +28,7 @@
 * Please send comments, questions, or patches to code@clearpathrobotics.com
 *
 */
-                                 
+                                           
 #include "rover_base/horizon_legacy/clearpath.h"
 #include <ros/ros.h>
 
