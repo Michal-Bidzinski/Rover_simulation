@@ -25,7 +25,7 @@ align = rs.align(align_to)
 # Node init and publisher definition
 rospy.init_node('rover_trajectory', anonymous = True)
 pub_path = rospy.Publisher("path", Path, queue_size = 100)
-pub_odom = rospy.Publisher('odom_t265', Odometry, queue_size=5)
+pub_odom = rospy.Publisher('odom_t265', Odometry, queue_size=10)
 rate = rospy.Rate(200) # 30hz
 
 # init trajectory variables

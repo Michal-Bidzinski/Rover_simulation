@@ -40,8 +40,8 @@ ts = message_filters.ApproximateTimeSynchronizer([odometry, point_cloud], 2, 0.0
 ts.registerCallback(cameras_callback)
 
 # Publisher definition
-pub_odom = rospy.Publisher('odom_t265_sync', Odometry, queue_size=20)
-pub_align_depth = rospy.Publisher("align_depth_sync", Image, queue_size=2)
+pub_odom = rospy.Publisher('odom_t265_sync', Odometry, queue_size=10)
+pub_align_depth = rospy.Publisher("align_depth_sync", Image, queue_size=6)
 rate = rospy.Rate(30) # 30hz
 
 #print("Start node")

@@ -24,8 +24,8 @@ align = rs.align(align_to)
 # Node init and publisher definition
 rospy.init_node('rover_rgb_align_depth', anonymous = True)
 pub_color = rospy.Publisher("rgb_image", Image, queue_size=2)
-pub_align = rospy.Publisher("align_depth", Image, queue_size=2)
-pub_camera_info = rospy.Publisher("camera_info", CameraInfo, queue_size=2)
+pub_align = rospy.Publisher("align_depth", Image, queue_size=6)
+pub_camera_info = rospy.Publisher("camera_info", CameraInfo, queue_size=6)
 rate = rospy.Rate(30) # 30hz
 
 # get color camera data
