@@ -1,0 +1,6 @@
+<!-- 
+  Launch file:  
+-->
+<launch>
+	<node pkg="openstreetmap_path_generator" type="gps_kalman_filter.py" name="gps" output="screen"/>
+</launch>

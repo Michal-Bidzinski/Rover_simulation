@@ -1,0 +1,6 @@
+<!-- 
+  Launch:  
+-->
+<launch>
+	<node pkg="openstreetmap_path_generator" type="osm_servis_path_generator.py" name="osm_path_generator_servis" output="screen"/>
+</launch>

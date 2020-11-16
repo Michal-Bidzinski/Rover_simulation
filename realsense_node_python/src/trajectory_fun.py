@@ -46,7 +46,7 @@ def get_path_position_orientation(pose, my_path, timestamp, sync):
         orientation = [pose.pose.orientation.x, pose.pose.orientation.y, pose.pose.orientation.z]
 
         odom = Odometry()
-        odom.header.frame_id = 'camera'
+        odom.header.frame_id = 'base_link'
   
         if sync:
             odom.header.stamp = time
