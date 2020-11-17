@@ -26,14 +26,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 <launch>
   
   <!--- Run Move Base -->  
-  <include file="$(find rover_gazebo)/launch/rover_playpen.launch"/>
+  <include file="$(find rplidar_ros)/launch/rplidar_a3.launch"/>
+
+  <include file="$(find realsense_node_python)/launch/rover_cameras2.launch"/>
+
+  <include file="$(find rover_viz)/launch/view_real_robot.launch"/>
+
+  <include file="$(find rover_navigation)/launch/gmapping_demo_real.launch"/>
 
   <include file="$(find rover_viz)/launch/view_robot.launch"/>
-
-  <!--include file="$(find rover_navigation)/launch/exploration_demo.launch"-->
-
-  <include file="$(find rover_navigation)/launch/gmapping_demo.launch"/>
-
-  <!--include file="$(find rover_navigation)/launch/move_base_mapless_demo.launch"/-->
   
 </launch>

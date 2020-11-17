@@ -31,6 +31,18 @@ def callback(msg):
                       rospy.Time.now(),
                       "base_link",
                       "central")
+
+    br3 = tf.TransformBroadcaster()
+    br3.sendTransform((0.0865, 
+                       0,
+                       0),
+                      (0, 
+                       0, 
+                       0, 
+                       1),
+                      rospy.Time.now(),
+                      "laser_link",
+                      "base_link")
     # print("pub transform")
 
 

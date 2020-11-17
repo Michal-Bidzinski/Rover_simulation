@@ -30,7 +30,7 @@ def cameras_callback(odom_msg, image_msg, scan_msg):
     image_msg.header.stamp = rospy.Time.now()   
     odom_msg.header.stamp = rospy.Time.now()  
     scan_msg.header.stamp = rospy.Time.now()
-    scan_msg.header.frame_id = 'base_link'
+    scan_msg.header.frame_id = 'laser_link'
  
     pub_odom.publish(odom_msg)
     pub_align_depth.publish(image_msg)

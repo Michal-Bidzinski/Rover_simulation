@@ -27,7 +27,7 @@
 *
 * Please send comments, questions, or patches to code@clearpathrobotics.com   
 *
-*/                     
+*/                                  
                                                                                                                                                                                    
 #include "rover_base/husky_hardware.h"
 #include <boost/assign/list_of.hpp>              
