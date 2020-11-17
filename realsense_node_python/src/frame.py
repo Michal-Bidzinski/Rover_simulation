@@ -31,14 +31,14 @@ def callback(msg):
                       rospy.Time.now(),
                       "base_link",
                       "central")
-    print("pub transform")
+    # print("pub transform")
 
 
 
 
 if __name__ == '__main__':
     rospy.init_node('tf_camera')
-    rospy.Subscriber('odom_t265_sync',
+    rospy.Subscriber('odom_t265',
                      Odometry,
                      callback)
     

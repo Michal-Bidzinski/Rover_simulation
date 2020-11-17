@@ -26,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: Image
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -91,11 +91,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        camera:
+        base_link:
           Value: true
         central:
           Value: true
-        map:
+        odom:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -103,9 +103,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        camera:
-          map:
-            central:
+        odom:
+          central:
+            base_link:
               {}
       Update Interval: 0
       Value: true

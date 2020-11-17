@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /Sensing1
+        - /Sensing1/LaserScan1
         - /Navigation1
         - /Navigation1/Exploration1
       Splitter Ratio: 0.49492400884628296
@@ -61,30 +62,45 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
+        Bracket_t265nd435_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Central_D435_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        Left_D435_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
+        Right_D435_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        T265_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        base_laser:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_laser_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        front_bumper_link:
+        box_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -107,40 +123,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rear_bumper_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         rear_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         rear_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        top_chassis_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        top_plate_front_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        top_plate_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        top_plate_rear_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        user_rail_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -235,7 +223,7 @@ Visualization Manager:
           Size (Pixels): 3
           Size (m): 0.029999999329447746
           Style: Flat Squares
-          Topic: /scan
+          Topic: /scan_sync
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -423,7 +411,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 17.12980079650879
+      Distance: 8.243605613708496
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -438,10 +426,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9598000049591064
+      Pitch: 1.3697996139526367
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.220399856567383
+      Yaw: 3.3453941345214844
     Saved: ~
 Window Geometry:
   Displays:
