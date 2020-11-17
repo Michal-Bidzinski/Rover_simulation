@@ -176,55 +176,37 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   </joint>
 
   <!-- Spawn user left realsense -->
-  <link name="Left_D435_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://rover_description/meshes/D435_2.dae" scale="0.001 0.001 0.001" />
-      </geometry>
-    </visual>
-  </link>
-
+  <link name="Left_D435_link"/>
   <!-- Attach user left realsense to base link -->
   <joint name="Left_D435" type="fixed">
-    <origin xyz="0.220823 -0.063713 0.4420110229" rpy="1.5707963268 0.0 0.5235987756" />
+    <!--origin xyz="0.220823 -0.063713 0.4420110229" rpy="1.5707963268 0.0 0.5235987756" /-->
+    <origin xyz="0.219323 -0.060713 0.4320110229" rpy="0.0 0.0 -1.0471975512" />
     <parent link="base_link" />
     <child link="Left_D435_link" />
   </joint>
+  <xacro:intel_realsense_mount prefix="camera_left" topic="realsense_left" parent_link="Left_D435_link"/>
 
   <!-- Spawn user right realsense -->
-  <link name="Right_D435_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://rover_description/meshes/D435_2.dae" scale="0.001 0.001 0.001" />
-      </geometry>
-    </visual>
-  </link>
-
+  <link name="Right_D435_link"/>
   <!-- Attach user fight realsense to base link -->
   <joint name="Right_D435" type="fixed">
-    <origin xyz="0.220823 0.063713 0.4420110229" rpy="1.5707963268 0.0 2.617993878" />
+    <!--origin xyz="0.220823 0.063713 0.4420110229" rpy="1.5707963268 0.0 2.617993878" /-->
+    <origin xyz="0.219323 0.060713 0.4320110229" rpy="0.0 0.0 1.0471975512" />
     <parent link="base_link" />
     <child link="Right_D435_link" />
   </joint>
+  <xacro:intel_realsense_mount prefix="camera_right" topic="realsense_right" parent_link="Right_D435_link"/>
 
   <!-- Spawn user right realsense -->
-  <!--link name="Central_D435_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://rover_description/meshes/D435_2.dae" scale="0.001 0.001 0.001" />
-      </geometry>
-    </visual>
-  </link-->
-
-  <!-- Attach user fight realsense to base link -->
   <link name="Central_D435_link"/>
+  <!-- Attach user fight realsense to base link -->
   <joint name="Central_D435" type="fixed">
     <!--origin xyz="0.254623 -0.01 0.3720229" rpy="1.5707963268 0.0 1.5707963268" /-->
-    <origin xyz="0.254623 -0.01 0.3720229" rpy="0.0 0.0 0.0" />
+    <origin xyz="0.250623 -0.01 0.3620229" rpy="0.0 0.0 0.0" />
     <parent link="base_link" />
     <child link="Central_D435_link" />
   </joint>
-    <xacro:intel_realsense_mount prefix="camera" topic="realsense" parent_link="Central_D435_link"/>
+  <xacro:intel_realsense_mount prefix="camera_cenral" topic="realsense_central" parent_link="Central_D435_link"/>
 
   <!-- Spawn user right realsense -->
   <link name="T265_link">
@@ -237,7 +219,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
   <!-- Attach user fight realsense to base link -->
   <joint name="T265" type="fixed">
-    <origin xyz="0.261623 -0.0105 0.3460229" rpy="1.5707963268 0.0 1.5707963268" />
+    <origin xyz="0.261623 -0.0105 0.3400229" rpy="1.5707963268 0.0 1.5707963268" />
     <parent link="base_link" />
     <child link="T265_link" />
   </joint>

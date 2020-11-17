@@ -2,9 +2,11 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="intel_realsense_mount" params="prefix topic parent_link">
 
+               <!--h_fov:=1.5184351666666667 v_fov:=1.0122901111111111/-->
+
     <xacro:macro name="intel_realsense" params="
                frame:=realsense          topic:=realsense
-               h_fov:=1.5184351666666667 v_fov:=1.0122901111111111
+               h_fov:=1.2112585009       v_fov:=0.7417649321
                min_range:=0.105          max_range:=8.0
                width:=640                height:=480
                update_rate:=30
