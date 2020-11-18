@@ -1,4 +1,6 @@
 #!/usr/bin/env python3.6
+import matplotlib
+matplotlib.use('TkAgg')
 import osmnx as ox
 import matplotlib.pyplot as plt
 import networkx as nx

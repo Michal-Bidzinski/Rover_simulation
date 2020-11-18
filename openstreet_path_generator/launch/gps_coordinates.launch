@@ -1,6 +1,0 @@
-<!-- 
-  Launch file:  
--->
-<launch>
-	<node pkg="openstreetmap_path_generator" type="gps.py" name="gps" output="screen"/>
-</launch>

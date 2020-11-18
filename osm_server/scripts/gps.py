@@ -7,12 +7,11 @@ from copy import copy
 from sensor_msgs.msg import NavSatFix
 from gps_library import gps_read_coordinates
 
-
-class GPS:
+class GPS():
     def __init__(self):
         # definition of serial port
-        self.port = "/dev/ttyUSB0"
-        self.ser = serial.Serial(self.port, baudrate=9600, timeout=0.5)
+        self.port="/dev/ttyUSB0"
+        self.ser=serial.Serial(self.port, baudrate=9600, timeout=0.5)
 
         # receive coordinates flag
         self.received = False
@@ -32,12 +31,12 @@ class GPS:
         self.msg = NavSatFix()
 
         # coordinates publisher
-        self.gps_pub = rospy.Publisher("gps_point_lat_lng", NavSatFix, queue_size=6)
+        self.gps_pub = rospy.Publisher("gps_point_lat_lng", NavSatFix, queue_size=2)
 
     def get_coordinates(self):
         while not rospy.is_shutdown():
             # read serial port
-            newdata = self.ser.readline()
+            newdata=self.ser.readline()
 
             # decode data
             self.received, self.lat, self.lng, self.time = gps_read_coordinates(newdata)
@@ -53,6 +52,7 @@ class GPS:
                 self.lat_p = copy(self.lat)
                 self.lng_p = copy(self.lng)
 
+
     # publish  coordinates
     def publish_waypoints(self):
         self.msg.latitude = self.lat
@@ -63,7 +63,7 @@ class GPS:
 
 def main():
     # init ros node
-    rospy.init_node('gps', anonymous=True)
+    rospy.init_node('gps', anonymous = True)
 
     # create gps object
     gps_object = GPS()

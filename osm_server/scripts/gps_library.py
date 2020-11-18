@@ -38,15 +38,9 @@ def gps_read_coordinates(new_data):
         hour = int(time_b/10000)
         minute = int((time_b - hour*10000)/100)     
         second = int(time_b - hour*10000 - minute*100)
-
         print("date: ", hour, ":", minute, ":", second)
         print("ros time: ", rospy.Time.now().secs, " ", rospy.Time.now().nsecs)
-
         t_second = years*365*24*3600 + days*24*3600 +  hour * 3600 + minute * 60 + second
-
-        if t_second > t_ros:
-            t_second -= t_second - t_ros
-
         print("t_gps   : ", t_second)
         time = rospy.Time(secs=t_second, nsecs = 0)
 

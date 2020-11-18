@@ -4,7 +4,7 @@
 <launch>
         <include file="$(find osm_server)/launch/osm_path_generator_servis.launch"/>
 
-	<node pkg="openstreetmap_path_generator" type="osm_path_example.py" name="osm_path" output="screen"/>
+	<node pkg="osm_server" type="osm_path_example.py" name="osm_path" output="screen"/>
           <!--param name="start_lat" value="16.2609" /-->
           <!--param name="start_lng" value="52.2324" /-->
           <!--param name="end_lat" value="16.2300" /-->

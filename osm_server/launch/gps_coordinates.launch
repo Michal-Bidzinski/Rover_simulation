@@ -1,0 +1,6 @@
+<!-- 
+  Launch file:  
+-->
+<launch>
+	<node pkg="osm_server" type="gps.py" name="gps" output="screen"/>
+</launch>
