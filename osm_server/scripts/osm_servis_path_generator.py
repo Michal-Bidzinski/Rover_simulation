@@ -45,7 +45,7 @@ def handle_numbers(req):
     fig, ax = ox.plot_graph_route(graph2, route, show=False, close=False) 
 
     # PLOT
-    show = False
+    show = True
     if show:
         plt.show()
 

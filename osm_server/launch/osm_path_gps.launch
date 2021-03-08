@@ -2,9 +2,9 @@
   Launch:  
 -->
 <launch>
-	<node pkg="osm_servis" type="osm_servis_path_generator.py" name="osm_path_generator_servis" output="screen"/>
-	<node pkg="osm_servis" type="gps_kalman_filter.py" name="gps_reader" output="screen"/>
-	<node pkg="osm_servis" type="osm_path_gps.py" name="osm_path" output="screen"/>
+	<include file="$(find osm_server)/launch/osm_path_generator_servis.launch"/>
+	<!--node pkg="osm_servis" type="gps_kalman_filter.py" name="gps_reader" output="screen"/-->
+	<node pkg="osm_server" type="osm_path_gps.py" name="osm_path" output="screen"/>
 
           <param name="lat1" value="52.2408" />
           <param name="lat2" value="52.2052" />

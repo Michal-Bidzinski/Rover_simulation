@@ -5,6 +5,8 @@ import numpy as np
 from shapely.geometry import Point
 from shapely.geometry import LineString
 import math as m
+import pickle
+from pathlib import Path
 
 # set start and end point 
 def set_start_end_point(req):
@@ -34,12 +36,17 @@ def get_graph_of_area_from_osm(req):
 
     if req[8] == 1.0:
         # map of airport
-        graph = ox.graph_from_bbox(req[4], req[5], req[6], req[7], network_type='all', custom_filter = ('["aeroway"]'), simplify=False) 
+        #graph = ox.graph_from_bbox(req[4], req[5], req[6], req[7], network_type='all', custom_filter = ('["aeroway"]'), simplify=False) 
+        #print(type(graph))
+        #with Path('./graph.p').open('wb') as pickle_file:
+        #    pickle.dump(graph, pickle_file)
+        with Path('./graph.p').open('rb') as pickle_file2:
+            graph2 = pickle.load(pickle_file2)
     else: 
         # map of area in bbox with all type on road 
-        graph = ox.graph_from_bbox(req[4], req[5], req[6], req[7], network_type='all', simplify=False)
+        graph2 = ox.graph_from_bbox(req[4], req[5], req[6], req[7], network_type='all', simplify=False)
 
-    return graph
+    return graph2
 
 
 # add new node to graph

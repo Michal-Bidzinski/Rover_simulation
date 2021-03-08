@@ -4,8 +4,8 @@ import rospy
 from osm_server.srv import *
 import re
 from osm_server.msg import Array_my_a, Array_my_b
-
 from geometry_msgs.msg import PoseArray, Pose, Point, Quaternion
+
 
 class OSM_path_generator:
 
